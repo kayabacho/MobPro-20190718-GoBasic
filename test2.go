@@ -1,8 +1,10 @@
 package main
 
-import ("fmt")
+import (
+	"fmt"
+)
 
-func main(){
+func main() {
 	fmt.Println("Hello world.")
 
 	var x int
@@ -14,7 +16,7 @@ func main(){
 
 	for i := 0; i < 10; i++ {
 
-		if w := add(x, i); w % 3 == 0 {
+		if w := add(x, i); w%3 == 0 {
 			fmt.Println(w)
 		}
 	}
@@ -24,13 +26,11 @@ func main(){
 	i := 42
 	p = &i
 
-	fmt.Printf("Pは%v\r\n",*p)
+	fmt.Printf("Pは%v\r\n", *p)
 	i = 21
-	fmt.Println("iは",*p)
+	fmt.Println("iは", *p)
 
-	
-
-	pp := Point{1,2}
+	pp := Point{1, 2}
 
 	v := &Point{1, 2}
 
@@ -46,17 +46,17 @@ func main(){
 
 	//スライス
 	var s []int = 配列[0:3]
-	
-	for cnt := 0; cnt<3; cnt++{
-		fmt.Printf("要素%vは%d\r\n",cnt,s[cnt])
+
+	for cnt := 0; cnt < 3; cnt++ {
+		fmt.Printf("要素%vは%d\r\n", cnt, s[cnt])
 	}
 	fmt.Printf("要素数は%v\r\n", len(s))
 	fmt.Printf("容量は%v\r\n", cap(s))
-	
-	sl := make([]int,5,6)
-	sl = append(sl,1,2,3,4,5,6)
-	for j := 0; j<len(sl); j++{
-		fmt.Printf("要素%vは%d\r\n",j,sl[j])
+
+	sl := make([]int, 5, 6)
+	sl = append(sl, 1, 2, 3, 4, 5, 6)
+	for j := 0; j < len(sl); j++ {
+		fmt.Printf("要素%vは%d\r\n", j, sl[j])
 	}
 	fmt.Println(len(sl))
 	fmt.Println(cap(sl))
@@ -82,29 +82,25 @@ func main(){
 	//map1 := make(map[string]int)
 
 	var m = map[string]int{
-		"one":1,
-		"two":2,
+		"one": 1,
+		"two": 2,
 	}
-	fmt.Printf("mapの１つ目の要素は%d\r\n",m["one"])
-	fmt.Printf("mapの２つ目の要素は%d\r\n",m["two"])
+	fmt.Printf("mapの１つ目の要素は%d\r\n", m["one"])
+	fmt.Printf("mapの２つ目の要素は%d\r\n", m["two"])
 
 	elem, ok := m["one"]
 
-	fmt.Println("mapの２つ目の要素は\r\n",ok,elem)
-
-	
+	fmt.Println("mapの２つ目の要素は\r\n", ok, elem)
 
 	pp.アップ()
-	fmt.Println("pp",pp.Add())
+	fmt.Println("pp", pp.Add())
 }
 
-
-
-func (p *Point) アップ(){
+func (p *Point) アップ() {
 	p.x += 1
 }
 
-func (p Point) Add() int{
+func (p Point) Add() int {
 	return p.x + p.y
 }
 
@@ -113,7 +109,6 @@ type Point struct {
 	x int
 	y int
 }
-
 
 func add(x int, y int) int {
 	return x + y
